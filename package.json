@@ -1,0 +1,11 @@
+{
+  "name": "ui-init",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sohanemon/sohanemon-ui",
+  "author": "sohanemon",
+  "license": "MIT",
+  "bin": {
+    "multiply": "bin/index.js"
+  }
+}
