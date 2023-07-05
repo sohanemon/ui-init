@@ -5,7 +5,6 @@ module.exports.globalsCss = `
 
 @layer base {
   :root {
-    --swiper-pagination-color: black
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
 
@@ -76,4 +75,13 @@ module.exports = {
   },
   plugins: [require('tailwindcss-animate')],
 };
+`;
+
+module.exports.utils = `
+import { clsx, type ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 `;
