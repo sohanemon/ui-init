@@ -122,7 +122,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={\`${poppins.className} ${poppins.variable}\`}>
+      <body className={\`\${poppins.className} \${poppins.variable}\`}>
         {children}
       </body>
     </html>
