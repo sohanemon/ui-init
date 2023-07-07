@@ -14,6 +14,9 @@ npx sohanemon@latest init
 ### ℹ️ What it does?
 
 ✅ Installs `clsx`, `tailwind-merge`, `tailwindcss-debug-screens`, `zustand`, `tailwindcss-animate`
+
 ✅ Optimizes your folder structure
+
 ✅ Optimizes `tailwind.config.js`
+
 ✨ Illustrated Readme.md is coming soon
