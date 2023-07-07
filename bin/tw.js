@@ -22,20 +22,21 @@ function runTW() {
     console.error('Failed to install libraries:', error);
   }
 
-  fs.mkdir('./public/assets/images', { recursive: true }, () =>
+  fs.mkdirSync('./public/assets/images', { recursive: true }, () =>
     console.log('/public/assets/images directory created')
   );
-  fs.mkdir('./components/ui', { recursive: true }, () =>
+  fs.mkdirSync('./components/ui', { recursive: true }, () =>
     console.log('/components/ui directory created')
   );
-  fs.mkdir('./lib/store', { recursive: true }, () =>
+  fs.mkdirSync('./lib/store', { recursive: true }, () =>
     console.log('/lib/store directory created')
   );
+
   fs.writeFileSync('./app/globals.css', code.globalsCss);
   fs.writeFileSync('./app/page.tsx', code.page);
   fs.writeFileSync('./app/layout.tsx', code.layout);
   fs.writeFileSync('./tailwind.config.js', code.tailwindConfig);
-  fs.writeFileSync('./lib/utils.ts', code.utils);
+  fs.writeFileSync('./lib/utils.ts', code.utils, { flag: 'w' });
   fs.writeFileSync('./README.md', require('../configs/readme'));
   console.log();
   console.log("Successfully Initialized! Let's hack broh");

@@ -7,7 +7,7 @@
 🔧 Works with Next JS + Tailwind Only
 
 ```bash
-npx sohanemon init
+npx sohanemon@latest init
 # works with next-js, tw, ts, app-dir, no-src
 ```
 
