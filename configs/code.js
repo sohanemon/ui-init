@@ -6,21 +6,21 @@ module.exports.globalsCss = `
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    --foreground: 215 33% 26%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 0 0% 56%;
+    --muted: var(--background);
+    --muted-foreground: 215 33% 26%;
 
-    --primary: 88 38% 15%;
-    --primary-foreground: 37 83% 84%;
+    --primary: 205 100% 32%;
+    --primary-foreground: var(--foreground);
 
-    --secondary: 0 0% 100%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 205 100% 44%;
+    --secondary-foreground: var(--foreground);
 
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
-    --border: 214.3 31.8% 0%;
+    --border: var(--primary);
   }
 }
 
