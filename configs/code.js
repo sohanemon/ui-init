@@ -8,7 +8,7 @@ module.exports.globalsCss = `
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
 
-    --muted: 210 40% 96.1%; /* pre */
+    --muted: 210 40% 96.1%;
     --muted-foreground: 0 0% 56%;
 
     --primary: 88 38% 15%;
@@ -26,10 +26,10 @@ module.exports.globalsCss = `
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border ring-border;
   }
   body {
-    @apply overflow-x-hidden bg-background text-foreground;
+    @apply overflow-x-hidden bg-background text-foreground debug-screens;
     font-feature-settings: 'rlig' 1, 'calt' 1;
   }
 }
@@ -49,7 +49,9 @@ module.exports = {
       },
     },
     extend: {
-      fontFamily: {},
+      fontFamily: {
+        poppins: 'var(--poppins)'
+      },
       colors: {
         border: 'hsl(var(--border))',
         background: 'hsl(var(--background))',
@@ -73,7 +75,10 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('tailwindcss-debug-screens'),
+  ],
 };
 `;
 
@@ -83,5 +88,44 @@ import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
+}
+`;
+
+module.exports.page = `
+export default function Home() {
+  return (
+    <main className='text-4xl mt-20 text-center'>
+      <a href='https://github.com/sohanemon' target='_blank'>sohanemon</a>
+    </main>
+  );
+}
+`;
+
+module.exports.layout = `
+import './globals.css';
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '100', '400', '200', '500', '600', '700', '800', '900'],
+  variable: '--poppins',
+});
+
+export const metadata = {
+  title: 'Next | SohanEmon',
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang='en'>
+      <body className={\`${poppins.className} ${poppins.variable}\`}>
+        {children}
+      </body>
+    </html>
+  );
 }
 `;
