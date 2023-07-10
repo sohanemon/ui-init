@@ -8,7 +8,7 @@ const code = require('../configs/code');
 const libraries = [
   'clsx',
   'tailwind-merge',
-  'tailwindcss-animate',
+  'framer-motion',
   'tailwindcss-debug-screens',
   'zustand',
 ];
@@ -25,8 +25,14 @@ function runTW() {
   fs.mkdirSync('./public/assets/images', { recursive: true }, () =>
     console.log('/public/assets/images directory created')
   );
-  fs.mkdirSync('./components/ui', { recursive: true }, () =>
-    console.log('/components/ui directory created')
+  fs.mkdirSync('./components/atoms', { recursive: true }, () =>
+    console.log('/components/atoms directory created')
+  );
+  fs.mkdirSync('./components/molecules', { recursive: true }, () =>
+    console.log('/components/molecules directory created')
+  );
+  fs.mkdirSync('./components/organisms', { recursive: true }, () =>
+    console.log('/components/organisms directory created')
   );
   fs.mkdirSync('./lib/store', { recursive: true }, () =>
     console.log('/lib/store directory created')
