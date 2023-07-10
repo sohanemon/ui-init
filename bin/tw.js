@@ -9,6 +9,7 @@ const libraries = [
   'clsx',
   'tailwind-merge',
   'framer-motion',
+  'lucide-react',
   'tailwindcss-debug-screens',
   'zustand',
 ];
