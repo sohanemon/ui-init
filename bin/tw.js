@@ -15,28 +15,25 @@ const libraries = [
 ];
 
 // Install the libraries
-function runTW() {
+function runTW(installer = 'npm i') {
   try {
-    execSync(`yarn add ${libraries.join(' ')}`, { stdio: 'inherit' });
+    execSync(`${installer} ${libraries.join(' ')}`, { stdio: 'inherit' });
     console.log('Libraries installed successfully!');
   } catch (error) {
     console.error('Failed to install libraries:', error);
   }
 
+  fs.mkdirSync('./app', { recursive: true }, () =>
+    console.log('/app \nthis app initiates with noSrc. LOL')
+  );
   fs.mkdirSync('./public/assets/images', { recursive: true }, () =>
-    console.log('/public/assets/images directory created')
+    console.log('/public/assets/images directory created\nStore your images here.')
   );
-  fs.mkdirSync('./components/atoms', { recursive: true }, () =>
-    console.log('/components/atoms directory created')
-  );
-  fs.mkdirSync('./components/molecules', { recursive: true }, () =>
-    console.log('/components/molecules directory created')
-  );
-  fs.mkdirSync('./components/organisms', { recursive: true }, () =>
-    console.log('/components/organisms directory created')
+  fs.mkdirSync('./components/ui', { recursive: true }, () =>
+    console.log('/components/ui directory created\nYour UI components directory')
   );
   fs.mkdirSync('./lib/store', { recursive: true }, () =>
-    console.log('/lib/store directory created')
+    console.log('/lib/store directory created\nIts your Global State broh.')
   );
 
   fs.writeFileSync('./app/globals.css', code.globalsCss);

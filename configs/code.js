@@ -22,6 +22,15 @@ module.exports.globalsCss = `
 
     --border: var(--primary);
   }
+
+  .dark {
+    --background: 215 33% 0%;
+    --foreground: 0 0% 100%;
+  }
+
+  input {
+    @apply bg-transparent;
+  }
 }
 
 @layer base {

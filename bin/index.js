@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
-const args = `${process.argv.slice(2)}`;
-
+const args = `${process.argv}`;
+console.log(args)
 const runTW = require('./tw');
 if (!args.includes('init'))
   return console.log('Please enter the argument broh!');
