@@ -37,6 +37,10 @@ module.exports.globalsCss = `
   * {
     @apply border-border ring-border;
   }
+  html {
+    --scroll-behavior: smooth !important;
+    scroll-behavior: smooth !important;
+  }
   body {
     @apply overflow-x-hidden bg-background text-foreground debug-screens;
     font-feature-settings: 'rlig' 1, 'calt' 1;
