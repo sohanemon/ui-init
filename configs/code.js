@@ -37,6 +37,21 @@ module.exports.globalsCss = `
   * {
     @apply border-border ring-border;
   }
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    @apply bg-primary;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/70;
+  }
   html {
     --scroll-behavior: smooth !important;
     scroll-behavior: smooth !important;
