@@ -6,6 +6,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [\`create-nex
 Initialize with useful libraries and structure your projects
 \`\`\`bash
 npx sohanemon@latest init
+#or select installer
+npx sohanemon@latest init --yarn
+#or
+npx sohanemon@latest init --pnpm
+
 # works with next-js, tw, ts, app-dir, no-src
 \`\`\`
 

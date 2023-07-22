@@ -15,7 +15,7 @@ const libraries = [
 ];
 
 // Install the libraries
-function runTW(installer = 'npm i') {
+function runTW(installer) {
   try {
     execSync(`${installer} ${libraries.join(' ')}`, { stdio: 'inherit' });
     console.log('Libraries installed successfully!');

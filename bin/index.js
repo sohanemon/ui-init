@@ -10,6 +10,6 @@ console.log('---------------------------------------------------');
 console.log('Initializing project with `npx sohanemon init --tw`');
 console.log('---------------------------------------------------');
 console.log();
-if (!args.includes('--pnpm')) return runTW('pnpm i');
-if (!args.includes('--yarn')) return runTW('yarn add');
-runTW()
+if (args.includes('--pnpm')) return runTW('pnpm add');
+if (args.includes('--yarn')) return runTW('yarn add');
+runTW('npm install')

@@ -8,7 +8,7 @@
 
 ```bash
 npx sohanemon@latest init
-#or
+#or select installer
 npx sohanemon@latest init --yarn
 #or
 npx sohanemon@latest init --pnpm
