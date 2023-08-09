@@ -18,13 +18,13 @@ module.exports.globalsCss = `
     --secondary-foreground: var(--foreground);
 
     --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent-foreground:  var(--foreground);
 
     --border: var(--primary);
   }
 
   .dark {
-    --background: 215 33% 0%;
+    --background: var(--foreground);
     --foreground: 0 0% 100%;
   }
 
@@ -35,7 +35,7 @@ module.exports.globalsCss = `
 
 @layer base {
   * {
-    @apply border-border ring-border;
+    @apply border-border ring-border transition-all;
   }
   ::-webkit-scrollbar {
     width: 5px;

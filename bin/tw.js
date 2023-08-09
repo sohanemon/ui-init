@@ -26,11 +26,18 @@ function runTW(installer) {
   fs.mkdirSync('./app', { recursive: true }, () =>
     console.log('/app \nthis app initiates with noSrc. LOL')
   );
+  fs.mkdirSync('./app/[...catch]', { recursive: true }, () =>
+    console.log('/app/[...catch] \nTo catch all route. LOL')
+  );
   fs.mkdirSync('./public/assets/images', { recursive: true }, () =>
-    console.log('/public/assets/images directory created\nStore your images here.')
+    console.log(
+      '/public/assets/images directory created\nStore your images here.'
+    )
   );
   fs.mkdirSync('./components/ui', { recursive: true }, () =>
-    console.log('/components/ui directory created\nYour UI components directory')
+    console.log(
+      '/components/ui directory created\nYour UI components directory'
+    )
   );
   fs.mkdirSync('./lib/store', { recursive: true }, () =>
     console.log('/lib/store directory created\nIts your Global State broh.')
@@ -38,6 +45,7 @@ function runTW(installer) {
 
   fs.writeFileSync('./app/globals.css', code.globalsCss);
   fs.writeFileSync('./app/page.tsx', code.page);
+  fs.writeFileSync('./app/[...catch]/page.tsx', code.page);
   fs.writeFileSync('./app/layout.tsx', code.layout);
   fs.writeFileSync('./tailwind.config.js', code.tailwindConfig);
   fs.writeFileSync('./lib/utils.ts', code.utils, { flag: 'w' });
