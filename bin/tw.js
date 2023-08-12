@@ -3,6 +3,7 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
 const code = require('../configs/code');
+const { success } = require('./constant');
 
 // Define the libraries to install
 const libraries = [
@@ -16,6 +17,11 @@ const libraries = [
 
 // Install the libraries
 function runTW(installer) {
+  console.log();
+  console.log('---------------------------------------------------');
+  console.log('Initializing project with `npx sohanemon init --tw`');
+  console.log('---------------------------------------------------');
+  console.log();
   try {
     execSync(`${installer} ${libraries.join(' ')}`, { stdio: 'inherit' });
     console.log('Libraries installed successfully!');
@@ -50,18 +56,7 @@ function runTW(installer) {
   fs.writeFileSync('./tailwind.config.js', code.tailwindConfig);
   fs.writeFileSync('./lib/utils.ts', code.utils, { flag: 'w' });
   fs.writeFileSync('./README.md', require('../configs/readme'));
-  console.log();
-  console.log("Successfully Initialized! Let's hack broh");
-  console.log();
-  try {
-    execSync(`git add .`, { stdio: 'inherit' });
-    execSync(`git commit -m "Initialized with sohanemon"`, {
-      stdio: 'inherit',
-    });
-    console.log();
-  } catch (error) {
-    console.error('Failed to commit:', error);
-  }
+  success();
 }
 
 module.exports = runTW;

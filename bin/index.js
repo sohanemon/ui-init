@@ -1,15 +1,12 @@
 #! /usr/bin/env node
 
 const args = `${process.argv}`;
-console.log(args)
+console.log(args);
 const runTW = require('./tw');
-if (!args.includes('init'))
+const runNextTemplate = require('./next-template');
+if (!args.includes('init') || !args.includes('template'))
   return console.log('Please enter the argument broh!');
-console.log();
-console.log('---------------------------------------------------');
-console.log('Initializing project with `npx sohanemon init --tw`');
-console.log('---------------------------------------------------');
-console.log();
+if (args.includes('template')) return runNextTemplate(args);
 if (args.includes('--pnpm')) return runTW('pnpm add');
 if (args.includes('--yarn')) return runTW('yarn add');
-runTW('npm install')
+runTW('npm install');
