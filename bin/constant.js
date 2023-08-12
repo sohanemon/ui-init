@@ -10,6 +10,7 @@ function success() {
     execSync(`git commit -m "Initialized with sohanemon"`, {
       stdio: 'inherit',
     });
+    execSync(`git branch -M main`, { stdio: 'inherit' });
     console.log();
   } catch (error) {
     console.error('Failed to commit:', error);
