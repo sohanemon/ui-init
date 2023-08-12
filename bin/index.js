@@ -1,7 +1,6 @@
 #! /usr/bin/env node
 
 const args = `${process.argv}`;
-console.log(args);
 const runTW = require('./tw');
 const runNextTemplate = require('./next-template');
 if (!args.includes('init') || !args.includes('next'))
