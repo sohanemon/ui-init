@@ -5,6 +5,7 @@ function success() {
   console.log("Successfully Initialized! Let's hack broh");
   console.log();
   try {
+    execSync(`git init`, { stdio: 'inherit' });
     execSync(`git add .`, { stdio: 'inherit' });
     execSync(`git commit -m "Initialized with sohanemon"`, {
       stdio: 'inherit',
