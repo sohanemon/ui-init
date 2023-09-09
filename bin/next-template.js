@@ -1,4 +1,4 @@
-const { execSync, exec } = require('child_process');
+const { execSync } = require('child_process');
 const { success } = require('./constant');
 
 function nextTemplate(args = '') {
