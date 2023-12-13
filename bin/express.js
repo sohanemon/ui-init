@@ -41,9 +41,10 @@ function runExpressTsTemplate(args = '') {
     execSync(`cd ${projectName} && ${installer}`, {
       stdio: 'inherit',
     });
-    execSync(`cd ${projectName} && git init --bare`, {
+    execSync(`rm -rf ${projectName}/.git`, {
       stdio: 'inherit',
     });
+
     success(projectName);
   } catch (error) {
     console.error('Failed to install libraries:', error);
