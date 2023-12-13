@@ -3,7 +3,7 @@ const { success } = require('./constant');
 
 function nextTemplate(args = '') {
   let installer, projectName;
-  projectName = args.split(',next,')[1].split(',')[0];
+  projectName = args.split(',next,')[1]?.split(',')[0];
   switch (true) {
     case args.includes('bun'):
       installer = '--use-bun';

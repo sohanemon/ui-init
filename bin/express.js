@@ -3,19 +3,20 @@ const { success } = require('./constant');
 
 function runExpressTsTemplate(args = '') {
   let installer, projectName;
-  projectName = args.split(',next,')[1].split(',')[0];
+
+  projectName = args.split(',express-ts,')[1]?.split(',')[0];
   switch (true) {
     case args.includes('bun'):
-      installer = '--use-bun';
+      installer = 'bun install';
       break;
     case args.includes('pnpm'):
-      installer = '--use-pnpm';
+      installer = 'pnpm install';
       break;
     case args.includes('yarn'):
-      installer = '--use-yarn';
+      installer = 'yarn';
       break;
     default:
-      installer = '';
+      installer = 'npm install';
       break;
   }
   console.log();
@@ -37,6 +38,12 @@ function runExpressTsTemplate(args = '') {
         stdio: 'inherit',
       }
     );
+    execSync(`cd ${projectName} && ${installer}`, {
+      stdio: 'inherit',
+    });
+    execSync(`cd ${projectName} && git init --bare`, {
+      stdio: 'inherit',
+    });
     success(projectName);
   } catch (error) {
     console.error('Failed to install libraries:', error);
